@@ -1,0 +1,105 @@
+body {
+    background-image: url(./assets/bg-form.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Comfortaa", sans-serif;
+    margin: 0;
+    display: flex;
+}
+
+.form__section {
+    width: 90%;
+    max-width: 700px;
+    padding: 15px 10px;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #eef2f3;
+    box-shadow: 3px 3px 14px 0px #424040;
+}
+
+.form__container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.form__item,
+.form__item__last {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.form__label,
+.form__input,
+.form__p {
+    width: 100%;
+}
+
+.form__input {
+    border: none;
+    border-bottom: 1.9px solid #9e9e9e;
+    background-color: #eef2f3;
+}
+
+.form__input:focus-visible {
+    outline: none;
+    border-width: 0px 0px 1.9px 0px;
+    border-style: solid;
+    border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+}
+
+.form__label,
+.form__p,
+.form__label__radio {
+    color: #aaa8a8;
+}
+
+.form__radio {
+    padding-bottom: 8px;
+}
+
+input[type="file"]::file-selector-button {
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    color: white;
+    background: linear-gradient(to right, darkblue, darkorchid);
+}
+
+@media (min-width: 425px) {
+    .form__item {
+        align-items: baseline;
+    }
+    .form__label,
+    .form__p {
+        width: 40%;
+    }
+    .form__input,
+    .form__radio {
+        width: 60%;
+        vertical-align: middle;
+    }
+}
+
+@media (min-width: 768px) {
+    .form__div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .form__item {
+        width: 45%;
+        margin: 15px auto;
+    }
+
+    .form__label,
+    .form__p,
+    .form__input,
+    .form__radio {
+        width: 100%;
+    }
+
+    .form__item__last {
+        width: 95%;
+        margin: 15px auto;
+    }
+}
