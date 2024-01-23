@@ -5,6 +5,8 @@ body {
     font-family: "Comfortaa", sans-serif;
     margin: 0;
     display: flex;
+    padding: 10px 0;
+    height: 100vh;
 }
 
 .form__section {
@@ -66,6 +68,90 @@ input[type="file"]::file-selector-button {
     background: linear-gradient(to right, darkblue, darkorchid);
 }
 
+.input-msg-error {
+    color: red;
+}
+
+.btn__container {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.btn__form--send,
+.btn__form--reset,
+.btn__toast--acept {
+    border-radius: 18px;
+    border: none;
+}
+
+.btn__form--send,
+.btn__toast--acept {
+    background: linear-gradient(to right, darkblue, darkorchid);
+    color: white;
+    padding: 10px 20px;
+}
+
+.div__btn--reset {
+    background: linear-gradient(to right, darkblue, darkorchid);
+    width: 92px;
+    border-radius: 20px;
+    padding: 2px;
+    text-align: center;
+}
+
+.btn__form--reset {
+    padding: 10px 18px;
+}
+
+.form__p__required {
+    color: #bcbbbc;
+    margin-top: 35px;
+    font-size: 14px;
+}
+
+.toast__container {
+    position: absolute;
+    padding: 20px 30px;
+    border-radius: 2rem;
+    right: 3rem;
+    display: none;
+    background-color: #424040c7;
+    color: #eef2f3;
+    animation: fadeIn 2s;
+}
+
+.toast__title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.toast__description {
+    font-size: 1rem;
+}
+.toast__container.fade-in {
+    display: block;
+}
+
+.error__section {
+    width: 95%;
+    margin: auto;
+    padding: 10px 0;
+    border-radius: 5px;
+    color: #646464;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 @media (min-width: 425px) {
     .form__item {
         align-items: baseline;
@@ -76,8 +162,12 @@ input[type="file"]::file-selector-button {
     }
     .form__input,
     .form__radio {
-        width: 60%;
+        width: 58%;
         vertical-align: middle;
+        margin: auto;
+    }
+    .error__section {
+        width: 88%;
     }
 }
 
@@ -85,6 +175,7 @@ input[type="file"]::file-selector-button {
     .form__div {
         display: flex;
         flex-wrap: wrap;
+        align-items: baseline;
     }
     .form__item {
         width: 45%;
@@ -101,5 +192,9 @@ input[type="file"]::file-selector-button {
     .form__item__last {
         width: 95%;
         margin: 15px auto;
+    }
+
+    .error__section {
+        width: 90%;
     }
 }
