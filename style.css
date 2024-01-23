@@ -116,11 +116,11 @@ input[type="file"]::file-selector-button {
     position: absolute;
     padding: 20px 30px;
     border-radius: 2rem;
-    right: 3rem;
-    display: none;
+    right: 0;
+    opacity: 0;
     background-color: #424040c7;
     color: #eef2f3;
-    animation: fadeIn 2s;
+    transition: 2s;
 }
 
 .toast__title {
@@ -132,7 +132,8 @@ input[type="file"]::file-selector-button {
     font-size: 1rem;
 }
 .toast__container.fade-in {
-    display: block;
+    right: 3rem;
+    opacity: 1;
 }
 
 .error__section {
@@ -141,15 +142,6 @@ input[type="file"]::file-selector-button {
     padding: 10px 0;
     border-radius: 5px;
     color: #646464;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 @media (min-width: 425px) {
