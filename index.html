@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
@@ -13,101 +14,156 @@
     </head>
     <body>
         <section class="form__section">
-            <form action="" class="form__container">
+            <div id="errorSection" class="error__section"></div>
+            <div id="toast" class="toast__container"></div>
+            <form id="form" action="" class="form__container">
                 <div class="form__div">
                     <div class="form__item">
-                        <label class="form__label" for="">Primer nombre:</label>
-                        <input class="form__input" type="text" name="" id="" />
+                        <label class="form__label" for="name"
+                            >Primer nombre:</label
+                        >
+                        <input
+                            id="name"
+                            class="form__input"
+                            type="text"
+                            minlength="3"
+                            maxlength="10"
+                        />
+                        <span id="nameError" class="input-msg-error"></span>
                     </div>
                     <div class="form__item">
-                        <label class="form__label" for=""
-                            >Primer apellido:</label
+                        <label class="form__label" for="lastName"
+                            >Primer apellido:*</label
                         >
-                        <input class="form__input" type="text" name="" id="" />
+                        <input
+                            id="lastName"
+                            class="form__input"
+                            type="text"
+                            minlength="2"
+                            maxlength="20"
+                            required
+                        />
+                        <span id="lastNameError" class="input-msg-error"></span>
                     </div>
                 </div>
                 <div class="form__div">
                     <div class="form__item">
-                        <p class="form__p">Tipo de documento:</p>
+                        <p class="form__p">Tipo de documento:*</p>
                         <div class="form__radio">
                             <input
+                                id="dni"
                                 class="form__input__radio"
                                 type="radio"
-                                name=""
-                                id=""
+                                name="document_type"
+                                required
                             />
-                            <label class="form__label__radio" for="">DNI</label>
+                            <span id="dniError" class="input-msg-error"></span>
+                            <label class="form__label__radio" for="dni"
+                                >DNI</label
+                            >
                             <input
+                                id="cuil"
                                 class="form__input__radio"
                                 type="radio"
-                                name=""
-                                id=""
+                                name="document_type"
+                                required
                             />
-                            <label class="form__label__radio" for=""
+                            <label class="form__label__radio" for="cuil"
                                 >CUIL</label
                             >
+                            <p id="cuilError" class="input-msg-error"></p>
+                            <p id="documentIdError" class="input-msg-error"></p>
                         </div>
                     </div>
                     <div class="form__item">
-                        <label class="form__label" for=""
-                            >Número de documento:</label
+                        <label class="form__label" for="documentId"
+                            >Número de documento:*</label
                         >
-                        <input class="form__input" type="text" name="" id="" />
+                        <input
+                            class="form__input"
+                            type="text"
+                            id="documentId"
+                            required
+                        />
                     </div>
                 </div>
                 <div class="form__item__last">
-                    <label class="form__label" for="">Dirección:</label>
-                    <input class="form__input" type="text" name="" id="" />
+                    <label class="form__label" for="address">Dirección:</label>
+                    <input class="form__input" type="text" id="address" />
+                    <span id="addressError" class="input-msg-error"></span>
                 </div>
                 <div>
                     <div class="form__div">
                         <div class="form__item">
-                            <label class="form__label" for="">Edad</label>
+                            <label class="form__label" for="age">Edad</label>
                             <input
                                 class="form__input"
-                                type="text"
-                                name=""
-                                id=""
+                                type="number"
+                                id="age"
+                                min="0"
+                                max="100"
                             />
+                            <span id="ageError" class="input-msg-error"></span>
                         </div>
                         <div class="form__item">
-                            <label class="form__label" for=""
+                            <label class="form__label" for="zipCode"
                                 >Código postal</label
                             >
                             <input
                                 class="form__input"
                                 type="text"
-                                name=""
-                                id=""
+                                id="zipCode"
                             />
+                            <span
+                                id="zipCodeError"
+                                class="input-msg-error"
+                            ></span>
                         </div>
                     </div>
                     <div class="form__div">
                         <div class="form__item">
-                            <label class="form__label" for="">Email</label>
-                            <input
-                                class="form__input"
-                                type="text"
-                                name=""
-                                id=""
-                            />
+                            <label class="form__label" for="email">Email</label>
+                            <input class="form__input" type="text" id="email" />
+                            <span
+                                id="emailError"
+                                class="input-msg-error"
+                            ></span>
                         </div>
                         <div class="form__item">
-                            <label class="form__label" for="">Foto</label>
+                            <label class="form__label" for="photo">Foto*</label>
                             <input
+                                id="photo"
                                 class="form__input"
                                 type="file"
-                                name=""
-                                id=""
+                                required
                             />
+                            <span
+                                id="photoError"
+                                class="input-msg-error"
+                            ></span>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <button>Enviar</button>
-                    <button>Resetear</button>
+                <div class="btn__container">
+                    <button class="btn__form--send" type="submit">
+                        Enviar
+                    </button>
+
+                    <div class="div__btn--reset">
+                        <button
+                            class="btn__form--reset"
+                            type="button"
+                            id="btnReset"
+                        >
+                            Resetear
+                        </button>
+                    </div>
                 </div>
+                <p class="form__p__required">(*) Campos Obligatorios</p>
             </form>
         </section>
+        <script src="./js/validations.js"></script>
+        <script src="./js/toast.js"></script>
+        <script src="./js/main.js"></script>
     </body>
 </html>
